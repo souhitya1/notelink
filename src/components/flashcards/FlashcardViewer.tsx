@@ -42,21 +42,29 @@ const FlashcardViewer = ({ deckId }: FlashcardViewerProps) => {
   const isCompleted = Object.keys(completed).length === deck.flashcards.length;
   
   const goToNext = () => {
+    // Mark current card as completed
     setCompleted(prev => ({ ...prev, [currentCard.id]: true }));
     
     if (currentIndex < deck.flashcards.length - 1) {
+      // If not at the end of the deck, go to next card
       setCurrentIndex(currentIndex + 1);
       setShowAnswer(false);
-    } else if (!isCompleted) {
-      // If we're at the end but not all cards are completed, restart with only uncompleted cards
-      const nextIncompleteIndex = deck.flashcards.findIndex(
-        (_, idx) => idx !== currentIndex && !completed[deck.flashcards[idx].id]
-      );
+    } else {
+      // We're at the end of the deck
+      const remainingCards = deck.flashcards.filter(card => !completed[card.id] && card.id !== currentCard.id);
       
-      if (nextIncompleteIndex !== -1) {
-        setCurrentIndex(nextIncompleteIndex);
-        setShowAnswer(false);
+      if (remainingCards.length > 0) {
+        // Find the index of the first uncompleted card
+        const nextIncompleteIndex = deck.flashcards.findIndex(card => 
+          !completed[card.id] && card.id !== currentCard.id
+        );
+        
+        if (nextIncompleteIndex !== -1) {
+          setCurrentIndex(nextIncompleteIndex);
+          setShowAnswer(false);
+        }
       }
+      // If no cards remaining, it will stay on the last card and show isCompleted message
     }
   };
   
