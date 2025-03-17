@@ -1,6 +1,5 @@
-
 import { create } from 'zustand';
-import { Note, User, FlashcardDeck } from '@/types';
+import { Note, User, FlashcardDeck, Flashcard } from '@/types';
 import { persist } from 'zustand/middleware';
 import { toast } from 'sonner';
 
