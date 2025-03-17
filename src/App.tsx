@@ -17,6 +17,7 @@ import NoteDetail from "./pages/NoteDetail";
 import FlashcardsPage from "./pages/FlashcardsPage";
 import FlashcardDetail from "./pages/FlashcardDetail";
 import SharedNotesPage from "./pages/SharedNotesPage";
+import SummaryGenerator from "./pages/SummaryGenerator";
 import NotFound from "./pages/NotFound";
 
 // Layouts
@@ -56,6 +57,7 @@ const App = () => {
               <Route path="/flashcards" element={<FlashcardsPage />} />
               <Route path="/flashcards/:deckId" element={<FlashcardDetail />} />
               <Route path="/shared" element={<SharedNotesPage />} />
+              <Route path="/summarize" element={<SummaryGenerator />} />
             </Route>
             
             {/* Catch-all route */}

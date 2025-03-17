@@ -12,7 +12,8 @@ import {
   Plus, 
   Settings, 
   Users,
-  X
+  X,
+  FileDigit
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -106,6 +107,19 @@ const Sidebar = () => {
               >
                 <Users className="mr-2 h-5 w-5" />
                 Shared with me
+              </Button>
+            </Link>
+
+            <Link to="/summarize">
+              <Button
+                variant="ghost"
+                className={cn(
+                  "w-full justify-start",
+                  location.pathname === "/summarize" && "bg-sidebar-accent text-sidebar-accent-foreground"
+                )}
+              >
+                <FileDigit className="mr-2 h-5 w-5" />
+                Summarize Notes
               </Button>
             </Link>
           </div>
