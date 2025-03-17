@@ -29,7 +29,7 @@ const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="container mx-auto px-4 py-6 flex items-center justify-between">
-        <div className="font-bold text-2xl text-primary">NoteLink</div>
+        <div className="font-bold text-2xl text-primary">SyncEDU</div>
         <div className="flex items-center space-x-4">
           <Link to="/login">
             <Button variant="ghost">
@@ -106,7 +106,7 @@ const Index = () => {
       
       <footer className="border-t py-6">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>&copy; 2023 NoteLink. All rights reserved.</p>
+          <p>&copy; 2023 SyncEDU. All rights reserved.</p>
         </div>
       </footer>
     </div>

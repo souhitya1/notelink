@@ -43,7 +43,7 @@ const Sidebar = () => {
     >
       <div className="flex h-16 items-center justify-between border-b px-4">
         <Link to="/" className="flex items-center space-x-2">
-          <span className="font-bold text-lg text-primary">NoteLink</span>
+          <span className="font-bold text-lg text-primary">SyncEDU</span>
         </Link>
         <Button variant="ghost" size="icon" onClick={toggleSidebar} className="md:hidden">
           <X className="h-5 w-5" />
